@@ -63,18 +63,15 @@ const educationBTN = document.querySelector('.tabs__btn__education'),
       workBTN = document.querySelector('.tabs__btn__work'),
       qualificationWork = document.getElementById('education')
 
-if(educationBTN) {
-  educationBTN.addEventListener('click', ()=> {
-    document.querySelector('#work').classList.remove('qualification__active')
-    document.querySelector('#education').classList.add('qualification__active')    
-  })
-}
-if(workBTN) {
-  workBTN.addEventListener('click', ()=> {
-    document.querySelector('#education').classList.remove('qualification__active')
-    document.querySelector('#work').classList.add('qualification__active')
-  })
-}
+educationBTN.addEventListener('click', () => {
+  workBTN.classList.remove('qualification__active')
+  educationBTN.classList.add('qualification__active')
+})
+      
+workBTN.addEventListener('click', () => {
+  educationBTN.classList.remove('qualification__active')
+  workBTN.classList.add('qualification__active')
+})
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
@@ -106,8 +103,6 @@ modalCloses.forEach((item) => {
     })
   })
 })
-
-
 
 
 /*==================== PORTFOLIO SWIPER  ====================*/
